@@ -1,0 +1,39 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+ * Grille
+ *
+ * @ORM\Table(name="action")
+ * @ORM\Entity(repositoryClass="SPF\CoreBundle\Repository\ActionRepository")
+ */
+class Grile
+{
+
+
+    /**
+     * @var int
+     *
+     *
+     *
+     *
+     */
+    private $id;
+
+    /**
+     * @var ArrayCollection
+     *
+     *
+     */
+    private $numeros;
+
+public function __contruct(ArrayCollection $numeros)
+{
+    $this->numeros= $numeros ;
+}
+}

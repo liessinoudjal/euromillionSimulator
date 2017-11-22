@@ -1,0 +1,304 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- Header -->
+<header class="masthead">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in">Bienvenue dans le simulateur Euromillion!</div>
+            <div class="intro-heading ">Envie de savoir dans combien de temps votre grille va toucher le gros lot?</div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">aller au simulateur > </a>
+        </div>
+    </div>
+</header>
+
+<!-- Services -->
+    <section id="services">
+        <div id="wrapper">
+            <div id="container">
+                <div id="welcome">
+                    <h1><span>Simulateur </span> Euromillion
+                    </h1>
+                </div>
+
+                <div id="status">
+                    <p>
+                        <svg id="icon-status" width="1792" height="1792" viewBox="0 0 1792 1792"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z"
+                                  fill="#759E1A"/>
+                        </svg>
+
+                        Envi de savoir dans combien de temps tes numéros vont tomber?
+
+                    </p>
+                </div>
+
+                <div id="next">
+                    <h2>Test ta chance !</h2>
+                    <p>
+                        {{ form_start(form, {'attr': {'class': 'form-horizontal','id': '','role': 'form','onsubmit':'return valider ();' }}) }}
+                    <div class="form-group">
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Nombre de tirage</button>
+                              </span>
+                                {{ form_widget(form.nbTirage,{'attr': {'class': 'form-control selectpicker', 'id': 'num1' }}) }}
+                                {{ form_errors(form.nbTirage,{'attr':{'class':'help-inline'}}) }}
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+
+                            <div class="col-lg-2">
+                                <div class="input-group">
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button"><i class="fa fa-bookmark-o" aria-hidden="true"></i> 1</button>
+                              </span>
+                                    {{ form_widget(form.num1,{'attr': {'class': 'form-control selectpicker', 'id': 'num1' }}) }}
+                                    {{ form_errors(form.num1,{'attr':{'class':'help-inline'}}) }}
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-2">
+                                <div class="input-group">
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button"><i class="fa fa-bookmark-o" aria-hidden="true"></i> 2</button>
+                              </span>
+                                    {{ form_widget(form.num2,{'attr': {'class': 'form-control selectpicker', 'id': 'num2' }}) }}
+                                    {{ form_errors(form.num2,{'attr':{'class':'help-inline'}}) }}
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="col-lg-2">
+                                <div class="input-group">
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button"><i class="fa fa-bookmark-o" aria-hidden="true"></i> 3</button>
+                              </span>
+                                    {{ form_widget(form.num3,{'attr': {'class': 'form-control selectpicker', 'id': 'num3' }}) }}
+                                    {{ form_errors(form.num3,{'attr':{'class':'help-inline'}}) }}
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-lg-2">
+                                <div class="input-group">
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button"> <i class="fa fa-bookmark-o" aria-hidden="true"></i> 4</button>
+                              </span>
+                                    {{ form_widget(form.num4,{'attr': {'class': 'form-control selectpicker', 'id': 'num4' }}) }}
+                                    {{ form_errors(form.num4,{'attr':{'class':'help-inline'}}) }}
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-lg-2">
+                                <div class="input-group">
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button"><i class="fa fa-bookmark-o" aria-hidden="true"></i> 5</button>
+                              </span>
+                                    {{ form_widget(form.num5,{'attr': {'class': 'form-control selectpicker', 'id': 'num5' }}) }}
+                                    {{ form_errors(form.num5,{'attr':{'class':'help-inline'}}) }}
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button"><i class="fa fa-star" aria-hidden="true"></i> 1</button>
+                              </span>
+                                    {{ form_widget(form.etoile1,{'attr': {'class': 'form-control selectpicker', 'id': 'etoile1' }}) }}
+                                    {{ form_errors(form.etoile1,{'attr':{'class':'help-inline'}}) }}
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                              <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button"><i class="fa fa-star" aria-hidden="true"></i> 2</button>
+                              </span>
+                                    {{ form_widget(form.etoile2,{'attr': {'class': 'form-control selectpicker', 'id': 'etoile2' }}) }}
+                                    {{ form_errors(form.etoile2,{'attr':{'class':'help-inline'}}) }}
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-5 pull-right">
+                            <input type="submit" value="Simuler"
+                                   class="btn btn-primary"/>
+                        </div>
+                    </div>
+
+
+                    {{ form_end(form) }}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        body {
+            background: #F5F5F5;
+            font: 18px/1.5 sans-serif;
+        }
+
+        h1, h2 {
+            line-height: 1.2;
+            margin: 0 0 .5em;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 21px;
+            margin-bottom: 1em;
+        }
+
+        p {
+            margin: 0 0 1em 0;
+        }
+
+        a {
+            color: #0000F0;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        code {
+            background: #F5F5F5;
+            max-width: 100px;
+            padding: 2px 6px;
+            word-wrap: break-word;
+        }
+
+        #wrapper {
+            background: #eeeeee;
+            margin: 1em auto;
+            max-width: 1000px;
+            width: 95%;
+        }
+
+        #container {
+            padding: 2em;
+        }
+
+        #welcome, #status {
+            margin-bottom: 2em;
+        }
+
+        #welcome h1 span {
+            display: block;
+            font-size: 75%;
+        }
+
+        #icon-status, #icon-book {
+            float: left;
+            height: 64px;
+            margin-right: 1em;
+            margin-top: -4px;
+            width: 64px;
+        }
+
+        #icon-book {
+            display: none;
+        }
+        .input-group{
+            margin:5px;
+        }
+        .help-inline{
+            background-color: #ff8610;
+        }
+
+        @media (min-width: 768px) {
+            #wrapper {
+                width: 80%;
+                margin: 2em auto;
+            }
+
+            #icon-book {
+                display: inline-block;
+            }
+
+            #status a, #next a {
+                display: block;
+            }
+
+            @-webkit-keyframes fade-in {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+            @keyframes fade-in {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+            .sf-toolbar {
+                opacity: 0;
+                -webkit-animation: fade-in 1s .2s forwards;
+                animation: fade-in 1s .2s forwards;
+            }
+        }
+    </style>
+{% endblock %}
+   {% block javascripts %}
+
+<script>
+/*
+    $('select').on('change', function() {
+      var num= this.value;
+      var id= this.getAttribute('id').valueOf();
+          alert(  this.getAttribute('id').valueOf());
+      //alert(  this.getAttribute('id').indexOf('num'));
+            if(this.getAttribute('id').indexOf('num') >=0){
+               for(i=1;i<=5;i++){
+                   var grille= '#grille_num'+i;
+                   var id2= $(grille.toString()).getAttribute('id').valueOf();
+                   if( id2 != id ){
+                       alert('ok '+i);
+
+                   }
+               }
+            }else{
+                alert('dans etoile');
+            }
+    });*/
+  /* function valider(){
+       alert($('#grille_num1').value);
+   }*/
+
+</script>
+
+   {% endblock %}
