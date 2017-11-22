@@ -9,6 +9,7 @@
 namespace AppBundle\Service;
 
 
+use function array_shift;
 use Doctrine\Common\Collections\ArrayCollection;
 use function shuffle;
 
@@ -16,6 +17,8 @@ class NumerosEuromillions
 {
     const NB_NUMERO = 50;
     const NB_ETOILE = 12;
+    const NB_BON_NUMERO = 5;
+    const NB_BON_ETOILE = 2;
     private $numeros;
     private $etoiles;
     private $tabTirage;
@@ -27,8 +30,8 @@ class NumerosEuromillions
         for ($i = 1; $i <= self::NB_NUMERO; $i++) {
             $this->numeros->add($i);
         }
-        for ($i = 1; $i <= self::NB_ETOILE; $i++) {
-            $this->etoiles->add($i);
+        for ($j = 1; $j <= self::NB_ETOILE; $j++) {
+            $this->etoiles->add($j);
         }
     }
 
@@ -46,10 +49,10 @@ class NumerosEuromillions
       $tabEtoile=$this->etoiles->toArray();
         shuffle( $tabEtoile );
 
-        for ($i=0;$i<5;$i++){
-            $this->tabTirage["5num"][]=$tabNum[$i];
-            if($i<2){
-                $this->tabTirage["2etoiles"][]=$tabEtoile[$i];
+        for ($i=0;$i<self::NB_BON_NUMERO;$i++){
+            $this->tabTirage["5num"][]=array_shift($tabNum);
+            if($i<self::NB_BON_ETOILE){
+                $this->tabTirage["2etoiles"][]=array_shift($tabEtoile);
             }
         }
         return $this->tabTirage;

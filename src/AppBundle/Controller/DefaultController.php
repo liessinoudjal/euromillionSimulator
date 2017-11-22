@@ -30,7 +30,7 @@ class DefaultController extends Controller
 
             $simulateurEuro = new SimulateurEuromillion();
 
-            $simulation=$simulateurEuro->simuler($grille->getNums(),$grille->getEtoiles());
+            $simulation=$simulateurEuro->simuler($grille->getNums(),$grille->getEtoiles(),$grille->getNbTirage());
 
             return $this->render('default/index.html.twig');
             //  return $this->redirectToRoute('beneficiaire_index');
