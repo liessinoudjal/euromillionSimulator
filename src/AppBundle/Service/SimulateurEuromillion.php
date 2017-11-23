@@ -31,9 +31,9 @@ class SimulateurEuromillion
     {
         $this->numeroEuromillion = new NumerosEuromillions();
 
-dump($nbTirage);die;
+dump($nbTirage);
         $gagnant=false;
-        $nbTirage=0;
+        $nbTirageSimu=0;
 
         while(!$gagnant){
             $tabTirage=$this->numeroEuromillion->tirage();
@@ -59,11 +59,14 @@ dump($nbTirage);die;
             }*/
             $countEtoile=count($interEtoile);
             $countNum=count($interNum);
-           ++$nbTirage;
-
-            if($countEtoile==NumerosEuromillions::NB_BON_ETOILE and $countNum==NumerosEuromillions::NB_BON_NUMERO){
+           $nbTirageSimu++;
+           //
+            if($countEtoile==NumerosEuromillions::NB_BON_ETOILE and $countNum==NumerosEuromillions::NB_BON_NUMERO or $nbTirageSimu==$nbTirage ){
                 $gagnant=true;
-                dump($nbTirage);die;
+                dump($nbTirageSimu);
+                 dump($tabNums); dump($interNum);
+
+                dump($tabEtoiles); dump($interEtoile);
 
             }
           /*  if($nbTirage==100000){
