@@ -19,63 +19,96 @@ class SimulateurEuromillion
 
     const PRIX_GRILLE = 2.5;
     private $numeroEuromillion;
-
-
+private $nbAnnees;
+private $nbTirages;
+private $gagnant=false;
     public function __construct ()
     {
-
+        $this->numeroEuromillion = new NumerosEuromillions();
         
     }
 
     public function simuler (array $tabNums,array $tabEtoiles, $nbTirage)
     {
-        $this->numeroEuromillion = new NumerosEuromillions();
+        $this->nbTirages=$nbTirage*52*2;
+        $this->nbAnnees=$nbTirage;
 
-dump($nbTirage);
-        $gagnant=false;
+dump($this->nbTirages);
+        $fin=false;
         $nbTirageSimu=0;
 
-        while(!$gagnant){
+        while(!$fin){
             $tabTirage=$this->numeroEuromillion->tirage();
            // dump($tabTirage);
 
             $interNum=array_intersect($tabTirage["5num"],$tabNums);
             $interEtoile=array_intersect($tabTirage["2etoiles"],$tabEtoiles);
-           // dump($tabNums); dump($interNum);
 
-            //dump($tabEtoiles); dump($interEtoile);
-            /*  foreach($tabNums as $num){
-
-
-                /*if(in_array($num, $tabTirage["5num"])){
-                      $countNum++;
-                  }
-            }*/
-            /*  foreach($tabEtoiles as $etoile){
-            /*  if(in_array($etoile, $tabTirage["2etoiles"])){
-                   $countEtoile++;
-               }
-
-            }*/
             $countEtoile=count($interEtoile);
             $countNum=count($interNum);
            $nbTirageSimu++;
            //
-            if($countEtoile==NumerosEuromillions::NB_BON_ETOILE and $countNum==NumerosEuromillions::NB_BON_NUMERO or $nbTirageSimu==$nbTirage ){
-                $gagnant=true;
+            if($countEtoile==NumerosEuromillions::NB_BON_ETOILE and $countNum==NumerosEuromillions::NB_BON_NUMERO  ){
+                $this->gagnant=true;
+                $fin=true;
                 dump($nbTirageSimu);
                  dump($tabNums); dump($interNum);
 
                 dump($tabEtoiles); dump($interEtoile);
 
+            }elseif ($nbTirageSimu==$this->nbTirages ){
+                dump($nbTirageSimu);
+                dump($tabNums); dump($interNum);
+
+                dump($tabEtoiles); dump($interEtoile);
+                $fin=true;
             }
-          /*  if($nbTirage==100000){
-                dump($nbTirage);   die;
-            }*/
+
 
         }
-     // return $tirage= $this->numeroEuromillion->tirage();
+        dump($this);
+     return $this;
 
+    }
+
+    /**
+     * @return bool
+     */
+    public function isGagnant ()
+    {
+        return $this->gagnant;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNbAnnees ()
+    {
+        return $this->nbAnnees;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNbTirages ()
+    {
+        return $this->nbTirages;
+    }
+
+    /**
+     * @param mixed $nbTirages
+     */
+    public function setNbTirages ($nbTirages)
+    {
+        $this->nbTirages = $nbTirages;
+    }
+
+    /**
+     * @param mixed $nbAnnees
+     */
+    public function setNbAnnees ($nbAnnees)
+    {
+        $this->nbAnnees = $nbAnnees;
     }
 
 
