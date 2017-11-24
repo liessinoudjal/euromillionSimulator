@@ -22,6 +22,7 @@ class SimulateurEuromillion
 private $nbAnnees;
 private $nbTirages;
 private $gagnant=false;
+private $gains=0;
     public function __construct ()
     {
         $this->numeroEuromillion = new NumerosEuromillions();
@@ -69,6 +70,14 @@ dump($this->nbTirages);
         dump($this);
      return $this;
 
+    }
+
+    /**
+     * @return int
+     */
+    public function getGains ()
+    {
+        return $this->gains;
     }
 
     /**
