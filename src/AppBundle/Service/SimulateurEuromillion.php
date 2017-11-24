@@ -18,6 +18,8 @@ class SimulateurEuromillion
 {
 
     const PRIX_GRILLE = 2.5;
+    const PRIZE_POOL_MIN=17000000;
+    const PRIZE_POOL_MAX=190000000;
     private $numeroEuromillion;
 private $nbAnnees;
 private $nbTirages;
@@ -123,5 +125,9 @@ dump($this->nbTirages);
 
     public function getNumeroEuromillion(){
         return $this->numeroEuromillion;
+    }
+
+    public function estimationGains($prizePool,$nbBonNum,$nbBonEtoile){
+
     }
 }
