@@ -1,18 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<!-- Header -->
-<header class="masthead">
-    <div class="container">
-        <div class="intro-text">
-            <div class="intro-lead-in">Bienvenue dans le simulateur Euromillion!</div>
-            <div class="intro-heading ">Toucherez-vous le gros lot de votre vivant ?</div>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ path('euromillion') }}">Euromillion > </a>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#">Loto > </a>
-        </div>
-    </div>
-</header>
+<section>
 
+    {{ dump(simulationEuromillion) }}
+</section>
+<!-- Services -->
 
 
 {% endblock %}

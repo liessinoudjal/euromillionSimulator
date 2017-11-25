@@ -20,6 +20,21 @@ class DefaultController extends Controller
     public function indexAction (Request $request)
     {
 
+
+
+
+        return $this->render('default/index.html.twig', [
+
+        ]);
+    }
+
+    /**
+     * @Route("/euromillion", name="euromillion")
+     * @Method({"POST","GET"})
+     */
+    public function euromillionAction (Request $request)
+    {
+
         $grille = new Grille();
         $form = $this->createForm(GrilleType::class, $grille);
         $form->handleRequest($request);
@@ -30,14 +45,16 @@ class DefaultController extends Controller
 
             $simulateurEuro = new SimulateurEuromillion();
 
-            $simulation=$simulateurEuro->simuler($grille->getNums(),$grille->getEtoiles(),$grille->getNbTirage());
+            $simulationEuromillion=$simulateurEuro->simuler($grille->getNums(),$grille->getEtoiles(),$grille->getNbTirage());
 
-           // return $this->render('default/index.html.twig');
-            //  return $this->redirectToRoute('beneficiaire_index');
+             return $this->render('default/euromillionResult.html.twig',[
+               'simulationEuromillion'=>$simulationEuromillion,
+             ]);
+
         }
 
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
+        return $this->render('default/euromillion.html.twig', [
+
             'form' => $form->createView(),
         ]);
     }

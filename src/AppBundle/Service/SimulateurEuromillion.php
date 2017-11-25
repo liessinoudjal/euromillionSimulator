@@ -98,41 +98,51 @@ class SimulateurEuromillion
         $nbTirageSimu = 0;
 
         while (!$fin) {
-            $tabTirage = $this->numeroEuromillion->tirage();
-            // dump($tabTirage);
+            $nbTour= mt_rand(1,15);
+            $this->prizePool=self::PRIZE_POOL_MIN;
+            for($i=0;$i<$nbTour;$i++){
+                if($this->prizePool>=self::PRIZE_POOL_MAX){
+                    $this->prizePool=self::PRIZE_POOL_MAX;
+                }else{
+                    $this->prizePool*=1.15;
+                }
+                $tabTirage = $this->numeroEuromillion->tirage();
+                // dump($tabTirage);
 
-            $interNum = array_intersect($tabTirage["5num"], $tabNums);
-            $interEtoile = array_intersect($tabTirage["2etoiles"], $tabEtoiles);
+                $interNum = array_intersect($tabTirage["5num"], $tabNums);
+                $interEtoile = array_intersect($tabTirage["2etoiles"], $tabEtoiles);
 
-            $countEtoile = count($interEtoile);
-            $countNum = count($interNum);
-            $this->estimationGains($countNum, $countEtoile);
+                $countEtoile = count($interEtoile);
+                $countNum = count($interNum);
+                $this->estimationGains($countNum, $countEtoile);
 
-            $nbTirageSimu++;
+                $nbTirageSimu++;
 
-            //
-            if ($countEtoile == NumerosEuromillions::NB_BON_ETOILE and $countNum == NumerosEuromillions::NB_BON_NUMERO) {
-                $this->gagnant = true;
-                $fin = true;
-                dump($nbTirageSimu);
-                dump($tabNums);
-                dump($interNum);
+                //
+                if ($countEtoile == NumerosEuromillions::NB_BON_ETOILE and $countNum == NumerosEuromillions::NB_BON_NUMERO) {
+                    $this->gagnant = true;
+                    $fin = true;
+                    dump($nbTirageSimu);
+                    dump($tabNums);
+                    dump($interNum);
 
-                dump($tabEtoiles);
-                dump($interEtoile);
-                $this->miseTotale= $nbTirageSimu*self::PRIX_GRILLE;
+                    dump($tabEtoiles);
+                    dump($interEtoile);
+                    $this->miseTotale= $nbTirageSimu*self::PRIX_GRILLE;
 
-            } elseif ($nbTirageSimu == $this->nbTirages) {
-                dump($nbTirageSimu);
-                dump($tabNums);
-                dump($interNum);
+                } elseif ($nbTirageSimu == $this->nbTirages) {
+                    dump($nbTirageSimu);
+                    dump($tabNums);
+                    dump($interNum);
 
-                dump($tabEtoiles);
-                dump($interEtoile);
-                dump($this->gains);
-                $this->miseTotale= $nbTirageSimu*self::PRIX_GRILLE;
-                $fin = true;
+                    dump($tabEtoiles);
+                    dump($interEtoile);
+                    dump($this->gains);
+                    $this->miseTotale= $nbTirageSimu*self::PRIX_GRILLE;
+                    $fin = true;
+                }
             }
+
 
 
         }
@@ -221,7 +231,7 @@ class SimulateurEuromillion
 
             if ($nbBonNum == NumerosEuromillions::NB_BON_NUMERO and $nbBonEtoile == NumerosEuromillions::NB_BON_ETOILE) {
                 $this->gains += $this->getPrizePool();
-                $this->rang1++;
+
             }else{
                 $this->gains += $this->tabGains[$key];
 
