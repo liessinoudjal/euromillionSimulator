@@ -17,7 +17,7 @@ class NumerosEuromillions
 {
     const NB_NUMERO = 50;
     const NB_ETOILE = 12;
-    const NB_BON_NUMERO = 5;
+   const NB_BON_NUMERO = 5;
     const NB_BON_ETOILE = 2;
     private $numeros;
     private $etoiles;
