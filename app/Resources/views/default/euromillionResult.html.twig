@@ -1,11 +1,100 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<section>
+<section class="container">
+    <div class="card ">
+        {% if simulationEuromillion.gagnant%}
+      <div class="card-header bg-success text-white ">
+          <h2>Super ! </h2>
+          {% else %}
+          <div class="card-header bg-danger text-white ">
+              <h2>Aïe, ça pique !</h2>
+      </div>
+          {% endif %}
+        <div class="card-body">
+            <div class="table-responsive-sm">
+                <h3>Résultats simulation</h3>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class=""> {{ simulationEuromillion.nbAnnees }} ans</th>
+                        <th class="">{{ simulationEuromillion.nbTirages|number_format(0,',',' ') }} tirages</th>
+                        <th class="">{{ simulationEuromillion.miseTotale|number_format(2, ',', ' ') }} € misés</th>
+                        <th class="">{{ simulationEuromillion.gains|number_format(2, ',', ' ') }} € gagnés</th>
+                        {% if simulationEuromillion.benef <=0 %}
+                        <th class="">{{ simulationEuromillion.benef|number_format(2, ',', ' ') }} € perdu !</th>
+                        {% else %}
+                        <th class="">{{ simulationEuromillion.benef|number_format(2, ',', ' ') }} € gagné !</th>
+                        {% endif %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="bg-dark text-white">
+                        <th>rang</th>
+                        <th colspan="4">nombre de fois touché à ce rang</th>
+                    </tr>
+                    <tr>
+                        <th>rang 1</th>
+                        <td colspan="4">{{ simulationEuromillion.rang1 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 1</th>
+                        <td colspan="4">{{ simulationEuromillion.rang1 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 2</th>
+                        <td colspan="4">{{ simulationEuromillion.rang2 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 3</th>
+                        <td colspan="4">{{ simulationEuromillion.rang3 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 4</th>
+                        <td colspan="4">{{ simulationEuromillion.rang5 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 6</th>
+                        <td colspan="4">{{ simulationEuromillion.rang6 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 7</th>
+                        <td colspan="4">{{ simulationEuromillion.rang7 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 8</th>
+                        <td colspan="4">{{ simulationEuromillion.rang8 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 9</th>
+                        <td colspan="4">{{ simulationEuromillion.rang9 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 10</th>
+                        <td colspan="4">{{ simulationEuromillion.rang10 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 11</th>
+                        <td colspan="4">{{ simulationEuromillion.rang11 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 12</th>
+                        <td colspan="4">{{ simulationEuromillion.rang12 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 13</th>
+                        <td colspan="4">{{ simulationEuromillion.rang13 }} </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
+
+    </div>
     {{ dump(simulationEuromillion) }}
 </section>
-<!-- Services -->
+
 
 
 {% endblock %}

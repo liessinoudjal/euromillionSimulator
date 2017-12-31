@@ -29,7 +29,13 @@
                     <p>
                         {{ form_start(form, {'attr': {'class': 'form-horizontal','id': '','role': 'form','method':'POST' }}) }}
                     <div class="form-group">
+                        {% if not form.vars.valid %}
+                            <div class="alert alert-error">
+                                {{ form_errors(form) }}
+                            </div>
+                        {% endif %}
                         <div class="col-lg-5">
+                            <span class="badge"> </span>
                             <div class="input-group">
                               <span class="input-group-btn">
                                 <button class="btn btn-secondary" type="button"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Nombre de tirage</button>
@@ -43,6 +49,7 @@
 
 
                             <div class="col-lg-2">
+
                                 <div class="input-group">
                               <span class="input-group-btn">
                                 <button class="btn btn-secondary" type="button"><i class="fa fa-bookmark-o" aria-hidden="true"></i> 1</button>
