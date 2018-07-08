@@ -60,6 +60,8 @@ class SimulateurEuromillion
     private $gains = 0;
     private $miseTotale=0;
     private $benef;
+     public $tabNums;
+     public $tabEtoiles;
     public function __construct ()
     {
         $this->numeroEuromillion = new NumerosEuromillions();
@@ -90,6 +92,8 @@ class SimulateurEuromillion
      */
     public function simuler (array $tabNums, array $tabEtoiles, $nbTirage)
     {
+        $this->tabEtoiles=$tabEtoiles;
+        $this->tabNums=$tabNums;
         $this->nbTirages = $nbTirage * 52 * 2;
         $this->nbAnnees = $nbTirage;
 

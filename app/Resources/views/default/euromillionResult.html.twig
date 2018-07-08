@@ -6,10 +6,34 @@
     <div class="card ">
         {% if simulationEuromillion.gagnant%}
       <div class="card-header bg-success text-white ">
-          <h2>Super ! </h2>
+        <span>  <h2>Super ! </h2></span>
           {% else %}
           <div class="card-header bg-danger text-white ">
-              <h2>Aïe, ça pique !</h2>
+             <span>
+                <h2>Aïe, ça pique !</h2>
+             </span> 
+             {% for number in simulationEuromillion.tabNums %}
+             <span class="fa-stack">
+
+                <!-- The icon that will wrap the number -->
+                <span class="fa fa-circle-o fa-stack-2x"></span>
+                <!-- a strong element with the custom content, in this case a number -->
+                <strong class="fa-stack-1x">
+                    {{number}}   
+                </strong>
+           
+            </span> {% endfor%}
+             {% for number in simulationEuromillion.tabEtoiles %}
+             <span class="fa-stack">
+
+                <!-- The icon that will wrap the number -->
+                <span class="fa fa-star-o fa-stack-2x"></span>
+                <!-- a strong element with the custom content, in this case a number -->
+                <strong class="fa-stack-1x">
+                    {{number}}   
+                </strong>
+           
+            </span> {% endfor%}
       </div>
           {% endif %}
         <div class="card-body">
