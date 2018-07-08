@@ -23,9 +23,9 @@ class SimulateurEuromillion
     const PRIX_GRILLE = 2.5;
     const PRIZE_POOL_MIN = 17000000;
     const PRIZE_POOL_MAX = 190000000;
-    private $prizePool = 0;
+    public $prizePool = 0;
     private $tabGains = [
-
+        "5,2"=>self::PRIZE_POOL_MIN,
         "5,1" => 432260.99,
         "5,0" => 78142.57,
         "4,2" => 4498.49,
@@ -41,6 +41,7 @@ class SimulateurEuromillion
     ];
 
    private $rang1=0,$rang2=0,$rang3=0,$rang4=0,$rang5=0,$rang6=0,$rang7=0,$rang8=0,$rang9=0,$rang10=0,$rang11=0,$rang12=0,$rang13=0;
+     private $gainsrang1=0,$gainsrang2=0,$gainsrang3=0,$gainsrang4=0,$gainsrang5=0,$gainsrang6=0,$gainsrang7=0,$gainsrang8=0,$gainsrang9=0,$gainsrang10=0,$gainsrang11=0,$gainsrang12=0,$gainsrang13=0;
 
 
     private $numeroEuromillion;
@@ -110,6 +111,7 @@ class SimulateurEuromillion
                 }else{
                     $this->prizePool*=1.15;
                 }
+                $this->tabGains['5,2']=$this->prizePool; 
                 $tabTirage = $this->numeroEuromillion->tirage();
                 // dump($tabTirage);
 
@@ -247,31 +249,48 @@ class SimulateurEuromillion
     public function incrementerRang($key){
         switch ($key){
             case "5,2":
-                $this->rang1++;break;
+                $this->rang1++;
+                $this->gainsrang1+= $this->tabGains[$key];
+                break;
             case "5,1":
-                $this->rang2++;break;
+                $this->rang2++;
+                $this->gainsrang2+= $this->tabGains[$key];
+                break;
             case "5,0":
-                $this->rang3++;break;
+                $this->rang3++;
+                 $this->gainsrang3+= $this->tabGains[$key];break;
             case "4,2":
-                $this->rang4++;break;
+                $this->rang4++;
+                 $this->gainsrang4+= $this->tabGains[$key];break;
             case "4,1":
-                $this->rang5++;break;
+                $this->rang5++;
+                 $this->gainsrang5+= $this->tabGains[$key];break;
             case "3,2":
-                $this->rang6++;break;
+                $this->rang6++;
+                 $this->gainsrang6+= $this->tabGains[$key];break;
             case "4,0":
-                $this->rang7++;break;
+                $this->rang7++;
+                 $this->gainsrang7+= $this->tabGains[$key];break;
             case "2,2":
-                $this->rang8++;break;
+                $this->rang8++;
+                 $this->gainsrang8+= $this->tabGains[$key];break;
             case "3,1":
-                $this->rang9++;break;
+                $this->rang9++;
+                 $this->gainsrang9+= $this->tabGains[$key];break;
             case "3,0":
-                $this->rang10++;break;
+                $this->rang10++;
+                 $this->gainsrang10+= $this->tabGains[$key];break;
             case "1,2":
-                $this->rang11++;break;
+                $this->rang11++;
+                 $this->gainsrang11+= $this->tabGains[$key];break;
             case "2,1":
-                $this->rang12++;break;
+                $this->rang12++;
+                 $this->gainsrang12+= $this->tabGains[$key];break;
             case "2,0":
-                $this->rang13++;break;
+                $this->rang13++;
+                 $this->gainsrang13+= $this->tabGains[$key];break;
+           
+
         }
     }
     /**
@@ -377,4 +396,95 @@ class SimulateurEuromillion
     {
         return $this->rang13;
     }
+
+     /**
+     * @return int
+     */
+    public function getGainsRang1 ()
+    {
+        return $this->gainsrang1;
+    }
+
+     /**
+     * @return int
+     */
+    public function getGainsRang2 ()
+    {
+        return $this->gainsrang2;
+    }
+     /**
+     * @return int
+     */
+    public function getGainsRang3 ()
+    {
+        return $this->gainsrang3;
+    }
+     /**
+     * @return int
+     */
+    public function getGainsRang4 ()
+    {
+        return $this->gainsrang4;
+    }
+     /**
+     * @return int
+     */
+    public function getGainsRang5 ()
+    {
+        return $this->gainsrang5;
+    }
+     /**
+     * @return int
+     */
+    public function getGainsRang6 ()
+    {
+        return $this->gainsrang6;
+    }
+     /**
+     * @return int
+     */
+    public function getGainsRang7 ()
+    {
+        return $this->gainsrang7;
+    }
+     /**
+     * @return int
+     */
+    public function getGainsRang8 ()
+    {
+        return $this->gainsrang8;
+    }
+     /**
+     * @return int
+     */
+    public function getGainsRang9 ()
+    { 
+          return $this->gainsrang9;
+    }
+    public function getGainsRang10 ()
+    {
+        return $this->gainsrang10;
+    }
+     /**
+     * @return int
+     */
+    public function getGainsRang11 ()
+    {
+        return $this->gainsrang11;
+    }
+     /**
+     * @return int
+     */
+    public function getGainsRang12 ()
+    {
+        return $this->gainsrang12;
+    }
+     /**
+     * @return int
+     */
+    public function getGainsRang13 ()
+    {
+        return $this->gainsrang13;
+    }
+    
 }

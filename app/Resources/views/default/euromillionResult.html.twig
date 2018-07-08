@@ -6,12 +6,12 @@
     <div class="card ">
         {% if simulationEuromillion.gagnant%}
       <div class="card-header bg-success text-white ">
-        <span>  <h2>Super ! </h2></span>
+        <h2>Super ! </h2>
           {% else %}
           <div class="card-header bg-danger text-white ">
-             <span>
-                <h2>Aïe, ça pique !</h2>
-             </span> 
+           
+             <h2>Aïe, ça pique !</h2>
+             
              {% for number in simulationEuromillion.tabNums %}
              <span class="fa-stack">
 
@@ -56,55 +56,73 @@
                     <tbody>
                     <tr class="bg-dark text-white">
                         <th>rang</th>
-                        <th colspan="4">nombre de fois touché à ce rang</th>
+                        <th colspan="2">nombre de fois touché à ce rang</th>
+                        <th colspan="2">gains au rang</th>
                     </tr>
                     <tr>
                         <th>rang 1</th>
-                        <td colspan="4">{{ simulationEuromillion.rang1 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang1 }} </td>
+                         <td colspan="2">{{ simulationEuromillion.gainsrang1 }} </td>
                     </tr>
                     <tr>
                         <th>rang 2</th>
-                        <td colspan="4">{{ simulationEuromillion.rang2 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang2 }} </td>
+                         <td colspan="2">{{ simulationEuromillion.gainsrang2 }} </td>
                     </tr>
                     <tr>
                         <th>rang 3</th>
-                        <td colspan="4">{{ simulationEuromillion.rang3 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang3 }} </td>
+                         <td colspan="2">{{ simulationEuromillion.gainsrang3 }} </td>
                     </tr>
                     <tr>
                         <th>rang 4</th>
-                        <td colspan="4">{{ simulationEuromillion.rang5 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang4 }} </td>
+                         <td colspan="2">{{ simulationEuromillion.gainsrang4 }} </td>
+                    </tr>
+                    <tr>
+                        <th>rang 5</th>
+                        <td colspan="2">{{ simulationEuromillion.rang5 }} </td>
+                         <td colspan="2">{{ simulationEuromillion.gainsrang5 }} </td>
                     </tr>
                     <tr>
                         <th>rang 6</th>
-                        <td colspan="4">{{ simulationEuromillion.rang6 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang6 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.gainsrang6 }} </td>
                     </tr>
                     <tr>
                         <th>rang 7</th>
-                        <td colspan="4">{{ simulationEuromillion.rang7 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang7 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.gainsrang7 }} </td>
                     </tr>
                     <tr>
                         <th>rang 8</th>
-                        <td colspan="4">{{ simulationEuromillion.rang8 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang8 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.gainsrang8 }} </td>
                     </tr>
                     <tr>
                         <th>rang 9</th>
-                        <td colspan="4">{{ simulationEuromillion.rang9 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang9 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.gainsrang9 }} </td>
                     </tr>
                     <tr>
                         <th>rang 10</th>
-                        <td colspan="4">{{ simulationEuromillion.rang10 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang10 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.gainsrang10 }} </td>
                     </tr>
                     <tr>
                         <th>rang 11</th>
-                        <td colspan="4">{{ simulationEuromillion.rang11 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang11 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.gainsrang11 }} </td>
                     </tr>
                     <tr>
                         <th>rang 12</th>
-                        <td colspan="4">{{ simulationEuromillion.rang12 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang12 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.gainsrang12 }} </td>
                     </tr>
                     <tr>
                         <th>rang 13</th>
-                        <td colspan="4">{{ simulationEuromillion.rang13 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.rang13 }} </td>
+                        <td colspan="2">{{ simulationEuromillion.gainsrang13 }} </td>
                     </tr>
                     </tbody>
                 </table>

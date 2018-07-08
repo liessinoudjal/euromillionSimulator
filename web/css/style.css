@@ -2,19 +2,3 @@
     text-shadow: 2px 2px 10px #0b2e13;
 }
 
-.fa-circle{
-	position: absolute;
-	 font-size: 30px;
-
-} 
-.number{
-	position:relative;
-	height: 20px;
-	width:30px;
-}
-.number p {
-	position: absolute;
-	top:0px;
-	display: inline-block;
-	left:50%;
-}
