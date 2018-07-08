@@ -29,9 +29,9 @@ class SimulateurEuromillion
         "5,1" => 432260.99,
         "5,0" => 78142.57,
         "4,2" => 4498.49,
-        "4,1" => 203, 92,
-        "3,2" => 105, 22,
-        "4,0" => 62, 81,
+        "4,1" => 203.92,
+        "3,2" => 105.22,
+        "4,0" => 62.81,
         "2,2" => 19.92,
         "3,1" => 14.62,
         "3,0" => 12.2,
@@ -93,7 +93,7 @@ class SimulateurEuromillion
         $this->nbTirages = $nbTirage * 52 * 2;
         $this->nbAnnees = $nbTirage;
 
-        dump($this->nbTirages);
+      //  dump($this->nbTirages);
         $fin = false;
         $nbTirageSimu = 0;
 
@@ -122,22 +122,22 @@ class SimulateurEuromillion
                 if ($countEtoile == NumerosEuromillions::NB_BON_ETOILE and $countNum == NumerosEuromillions::NB_BON_NUMERO) {
                     $this->gagnant = true;
                     $fin = true;
-                    dump($nbTirageSimu);
-                    dump($tabNums);
-                    dump($interNum);
+                  //  dump($nbTirageSimu);
+                 //   dump($tabNums);
+                  //  dump($interNum);
 
-                    dump($tabEtoiles);
-                    dump($interEtoile);
+                  //  dump($tabEtoiles);
+                 //   dump($interEtoile);
                     $this->miseTotale= $nbTirageSimu*self::PRIX_GRILLE;
 
                 } elseif ($nbTirageSimu == $this->nbTirages) {
-                    dump($nbTirageSimu);
-                    dump($tabNums);
-                    dump($interNum);
+                  //  dump($nbTirageSimu);
+                  //  dump($tabNums);
+                  //  dump($interNum);
 
-                    dump($tabEtoiles);
-                    dump($interEtoile);
-                    dump($this->gains);
+                  //  dump($tabEtoiles);
+                  //  dump($interEtoile);
+                  //  dump($this->gains);
                     $this->miseTotale= $nbTirageSimu*self::PRIX_GRILLE;
                     $fin = true;
                 }

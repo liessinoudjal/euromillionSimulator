@@ -2,6 +2,7 @@
 
 {% block body %}
 <section class="container">
+    <a href="{{path('homepage') }}" class="btn btn-warning">Recommencer</a>
     <div class="card ">
         {% if simulationEuromillion.gagnant%}
       <div class="card-header bg-success text-white ">
@@ -14,7 +15,7 @@
         <div class="card-body">
             <div class="table-responsive-sm">
                 <h3>Résultats simulation</h3>
-                <table class="table">
+                <table class="table table-striped">
                     <thead>
                     <tr>
                         <th class=""> {{ simulationEuromillion.nbAnnees }} ans</th>
@@ -32,10 +33,6 @@
                     <tr class="bg-dark text-white">
                         <th>rang</th>
                         <th colspan="4">nombre de fois touché à ce rang</th>
-                    </tr>
-                    <tr>
-                        <th>rang 1</th>
-                        <td colspan="4">{{ simulationEuromillion.rang1 }} </td>
                     </tr>
                     <tr>
                         <th>rang 1</th>

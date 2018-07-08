@@ -99,6 +99,9 @@ class Grille
         $this->grille=  new ArrayCollection();
         $this->grilleEtoile=  new ArrayCollection();
     }
+    public function __toString(){
+        return "{nbTirage:$this->nbTirage,num1:$this->num1,num2:$this->num2,num3:$this->num3,num4:$this->num4,num5:$this->num5,etoile1:$this->etoile1,etoile2:$this->etoile2}";
+    }
 
     public function getNbTirage()
     {
@@ -246,6 +249,16 @@ class Grille
         else
             return null;
     }
+     /**
+     * @return array|null
+     */
+    public function getGrille(){
+        if(!$this->grilleEtoile->isEmpty() and !$this->grille->isEmpty() )
+            return  array_merge ([$this->getNbTirage()], $this->grille->toArray(),$this->grilleEtoile->toArray());
+        else
+            return null;
+    }
+
 
     /**
      * @Assert\Callback
