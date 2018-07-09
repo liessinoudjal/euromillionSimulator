@@ -2,7 +2,7 @@
 
 {% block body %}
 <section class="container">
-    <a href="{{path('homepage') }}" class="btn btn-warning">Recommencer</a>
+    <a href="{{path('euromillion') }}" class="btn btn-warning">Recommencer</a>
     <div class="card ">
         {% if simulationEuromillion.gagnant%}
       <div class="card-header bg-success text-white ">
@@ -39,7 +39,7 @@
         <div class="card-body">
             <div class="table-responsive-sm">
                 <h3>Résultats simulation</h3>
-                <table class="table table-striped">
+                <table class="table table-striped text-center">
                     <thead>
                     <tr>
                         <th class=""> {{ simulationEuromillion.nbAnnees }} ans</th>

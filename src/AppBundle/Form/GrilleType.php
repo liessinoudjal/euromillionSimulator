@@ -85,7 +85,7 @@ class GrilleType extends AbstractType
     {
         $builder
             ->add('nbTirage', ChoiceType::class, [
-                'choices' => ['5 ans'=>5,'10 ans'=>10, '20 ans'=>20,'30 ans'=>30,'40 ans'=>40,'50 ans'=>50],
+                'choices' => ['5 ans'=>5,'10 ans'=>10, '20 ans'=>20,'30 ans'=>30,'40 ans'=>40,'50 ans'=>50,'1000 ans'=>1000],
                 'required' => true
             ])
             ->add('num1', ChoiceType::class, [
