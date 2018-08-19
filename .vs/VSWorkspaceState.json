@@ -2,10 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Resources",
     "\\app\\Resources\\views",
-    "\\app\\Resources\\views\\default"
+    "\\app\\Resources\\views\\default",
+    "\\src",
+    "\\src\\AppBundle",
+    "\\src\\AppBundle\\Controller"
   ],
-  "SelectedNode": "\\app\\Resources\\views\\default\\euromillionResult.html.twig",
+  "SelectedNode": "\\app\\Resources",
   "PreviewInSolutionExplorer": false
 }
